@@ -127,6 +127,7 @@ export default defineComponent({
 
             axios.post(`/activity`, {title: this.title,description: this.description,status: this.status,start_date: "10/06/2023",dae_date: this.daeDate,show_order: 1,backlog: false,activities_list_id: this.listId})
                 .then(response => {
+                    
                     this.title = '';
                     this.description = '';
                     this.modalAtivo = false;
