@@ -44,6 +44,7 @@ export default {
         },
         salvarProjeto() {
             let clientId = this.$route.params.clienteId
+            console.log(this.description)
             axios.post('/projects', { name: this.name, description: this.description,background:"00000000", client_id:clientId })
                 .then(response => {
                     this.name = '';

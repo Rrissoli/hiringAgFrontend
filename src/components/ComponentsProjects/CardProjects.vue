@@ -2,16 +2,16 @@
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">Nome: {{ projeto.name }}</h5>
-            <p class="card-text">Descrição: {{ projeto.description == null ? "Sem descrição" : projeto.description }}</p>
+            
             <p class="card-text">Status: {{ projeto.terminated == false ? "Em Aberto" : "Finalizado" }}</p>
             <div class="card-footer">
                 <button class="button is-primary is-small" @click="verAtividades(projeto.id, projeto.name)" >Visualizar Tarefas</button>
-                <button class="button is-primary is-small">Editar Projeto</button>
+                
             </div>
         </div>
     </div>
 </template>
-<script lang="ts">
+<script >
 import { defineComponent } from 'vue'
 
 export default defineComponent({

@@ -1,17 +1,17 @@
 <template>
     <div class="buttons-container">
-        <button class="button is-success" @click="adicionarProjeto">Adicionar Lista de Tarefas</button>
+        <button class="button is-success" @click="adicionarLista">Adicionar Lista de Tarefas</button>
         <div class="modal" :class="{ 'is-active': modalAtivo }">
             <div class="modal-background"></div>
             <div class="modal-content">
                 <div class="box">
                     <div class="field">
-                        <label class="label">Titulo do projeto</label>
+                        <label class="label">Titulo da Lista</label>
                         <div class="control">
                             <input class="input" type="text" v-model="name">
                         </div>
                     </div>
-                    <button class="button is-success" @click="salvarProjeto">Salvar</button>
+                    <button class="button is-success" @click="salvarLista">Salvar</button>
                     <button class="button" @click="modalAtivo = false">Cancelar</button>
                 </div>
             </div>
@@ -33,10 +33,10 @@ export default {
         }
     },
     methods: {
-        adicionarProjeto() {
+        adicionarLista() {
             this.modalAtivo = true;
         },
-        salvarProjeto() {
+        salvarLista() {
             let projectId = this.$route.params.projectId
             axios.post('/activitieslist', { name: this.name,show_order:3,backlog:false,project_id:projectId})
                 .then(response => {
